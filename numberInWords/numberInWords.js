@@ -4,7 +4,7 @@ function convertPart(str, idx){
   var lastIndex = numStr.length - 1;
   var output = '';
   var digits = digit_value;
-  if(n === 0 && str.length === 1){
+  if(str === "0"){
     return 'zero';
   }
   if(n>=10 && n<20){
