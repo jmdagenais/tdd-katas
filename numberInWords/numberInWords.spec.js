@@ -1,37 +1,37 @@
 TestCase("Number in word test", {
 
   "test one digit number": function(){
-    assertEquals('zero', numberInWords(0));
-    assertEquals('one', numberInWords(1));
-    assertEquals('nine', numberInWords(9));
+    assertEquals('zero', numberInWords.convert(0));
+    assertEquals('one', numberInWords.convert(1));
+    assertEquals('nine', numberInWords.convert(9));
   },
 
   "test two digits number": function(){
-    assertEquals('twenty', numberInWords(20));
-    assertEquals('thirty-one', numberInWords(31));
+    assertEquals('twenty', numberInWords.convert(20));
+    assertEquals('thirty-one', numberInWords.convert(31));
   },
 
   "test three digits number": function(){
-    assertEquals('one hundred fourty', numberInWords(140));
-    assertEquals('three hundred thirty-nine', numberInWords(339));
-    assertEquals('three hundred five', numberInWords(305));
-    assertEquals('six hundred', numberInWords(600));
+    assertEquals('one hundred fourty', numberInWords.convert(140));
+    assertEquals('three hundred thirty-nine', numberInWords.convert(339));
+    assertEquals('three hundred five', numberInWords.convert(305));
+    assertEquals('six hundred', numberInWords.convert(600));
   },
 
   "test number in teens": function(){
-    assertEquals('ten', numberInWords(10));
-    assertEquals('eleven', numberInWords(11));
-    assertEquals('eighteen', numberInWords(18));
+    assertEquals('ten', numberInWords.convert(10));
+    assertEquals('eleven', numberInWords.convert(11));
+    assertEquals('eighteen', numberInWords.convert(18));
   },
 
   "test number > 1000": function(){
-    assertEquals('five thousand nine hundred fourty-one', numberInWords(5941));
-    assertEquals('one thousand three hundred thirty-nine', numberInWords(1339));
-    assertEquals('thirty-three thousand five', numberInWords(33005));
-    assertEquals('sixty thousand', numberInWords(60000));
-    assertEquals('six hundred thousand', numberInWords(600000));
-    assertEquals('six million', numberInWords(6000000));
-    assertEquals('one hundred twenty-three million four hundred fifty-six thousand seven hundred eighty-nine', numberInWords(123456789));
+    assertEquals('five thousand nine hundred fourty-one', numberInWords.convert(5941));
+    assertEquals('one thousand three hundred thirty-nine', numberInWords.convert(1339));
+    assertEquals('thirty-three thousand five', numberInWords.convert(33005));
+    assertEquals('sixty thousand', numberInWords.convert(60000));
+    assertEquals('six hundred thousand', numberInWords.convert(600000));
+    assertEquals('six million', numberInWords.convert(6000000));
+    assertEquals('one hundred twenty-three million four hundred fifty-six thousand seven hundred eighty-nine', numberInWords.convert(123456789));
   }
 
 
