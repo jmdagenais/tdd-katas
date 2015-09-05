@@ -2,13 +2,12 @@ var numberInWords = {
 
   digit_value: ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'],
 
-  dizaine: ['', '', 'twenty', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'],
+  decade: ['', '', 'twenty', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'],
 
-  bigNumbers: ['', 'thousand', 'million', 'billion', 'trillion'],
+  bigNumbers: ['', 'thousand', 'million', 'billion', 'trillion', 'quadrillion', 'quintillion', 'sextillion', ],
 
-  convert: function(n, lang){
+  convert: function(n){
     var numStr = n.toString();
-    var lang = lang || 'EN';
     var numParts = this.getNumberParts(numStr);
     var wordParts = numParts.map(this.convertPartToWords, this);
     var output = wordParts.reverse().join(' ').trim();
@@ -26,16 +25,18 @@ var numberInWords = {
       return 'zero';
     }
     if(n>=10 && n<20){
-      return this.digit_value[n];
+      return digits[n];
     }
     var c, part;
+    //converts the digit of unit
     if(numStr.length >= 1){
       c = numStr[lastIndex];
       output = digits[c];
     }
+    //converts the digit of decade
     if(numStr.length >= 2){
       c = numStr[lastIndex - 1];
-      part = this.dizaine[c];
+      part = this.decade[c];
       if(output){
         if(part){
           output = part + '-' + output;
@@ -44,6 +45,7 @@ var numberInWords = {
         output = part;
       }
     }
+    //converts the digit of hundred
     if(numStr.length === 3){
       c = numStr[lastIndex - 2];
       part = digits[c];
@@ -64,6 +66,7 @@ var numberInWords = {
     return output.trim();
   },
 
+  //separate the number in 3 digit group: '123456789' =>  ['789', '456', '123']
   getNumberParts: function(str){
     var currentStr = str;
     var parts = [];
@@ -81,8 +84,6 @@ var numberInWords = {
 
     return parts;
   }
-
-
 
 };
 

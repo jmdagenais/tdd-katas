@@ -26,9 +26,7 @@ TestCase("Number in word test", {
 
   "test number > 1000": function(){
     assertEquals('five thousand nine hundred fourty-one', numberInWords.convert(5941));
-    assertEquals('one thousand three hundred thirty-nine', numberInWords.convert(1339));
     assertEquals('thirty-three thousand five', numberInWords.convert(33005));
-    assertEquals('sixty thousand', numberInWords.convert(60000));
     assertEquals('six hundred thousand', numberInWords.convert(600000));
     assertEquals('six million', numberInWords.convert(6000000));
     assertEquals('one hundred twenty-three million four hundred fifty-six thousand seven hundred eighty-nine', numberInWords.convert(123456789));
