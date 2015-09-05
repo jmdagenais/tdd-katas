@@ -40,7 +40,9 @@ function convertPart(str, idx){
       output = part;
     }
   }
-  output = output.trim() + " " + bigNumbers[idx];
+  if(n > 0){
+    output = output.trim() + " " + bigNumbers[idx];
+  }
   return output.trim();
 }
 
@@ -71,54 +73,14 @@ function numberInWords(n){
   return output;
 }
 
-var digit_value = [
-    '',
-    'one',
-    'two',
-    'three',
-    'four',
-    'five',
-    'six',
-    'seven',
-    'eight',
-    'nine',
-    'ten',
-    'eleven',
-    'twelve',
-    'thirteen',
-    'fourteen',
-    'fifteen',
-    'sixteen',
-    'seventeen',
-    'eighteen',
-    'nineteen'
-  ];
+var digit_value = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
 
-  var teen = [
-    'ten',
-    'eleven',
-    'twelve',
-    'thirteen',
-    'fourteen',
-    'fifteen',
-    'sixteen',
-    'seventeen',
-    'eighteen',
-    'nineteen'
-  ];
-
-  var dizaine = [
-    '',
-    '',
-    'twenty',
-    'thirty',
-    'fourty',
-    'fifty',
-    'sixty',
-    'seventy',
-    'eighty',
-    'ninety'];
+  var dizaine = ['', '', 'twenty', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
 
   var bigNumbers = [
-    '', 'thousand', 'million', 'billion'
+    '', 'thousand', 'million', 'billion', 'trillion'
+  ];
+
+  bigNumbersFR = [
+
   ];

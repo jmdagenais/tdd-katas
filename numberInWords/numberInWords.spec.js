@@ -1,6 +1,6 @@
 TestCase("Number in word test", {
 
-  /*"test one digit number": function(){
+  "test one digit number": function(){
     assertEquals('zero', numberInWords(0));
     assertEquals('one', numberInWords(1));
     assertEquals('nine', numberInWords(9));
@@ -22,14 +22,17 @@ TestCase("Number in word test", {
     assertEquals('ten', numberInWords(10));
     assertEquals('eleven', numberInWords(11));
     assertEquals('eighteen', numberInWords(18));
-  },*/
+  },
 
   "test number > 1000": function(){
     assertEquals('five thousand nine hundred fourty-one', numberInWords(5941));
     assertEquals('one thousand three hundred thirty-nine', numberInWords(1339));
     assertEquals('thirty-three thousand five', numberInWords(33005));
     assertEquals('sixty thousand', numberInWords(60000));
-  },
+    assertEquals('six hundred thousand', numberInWords(600000));
+    assertEquals('six million', numberInWords(6000000));
+    assertEquals('one hundred twenty-three million four hundred fifty-six thousand seven hundred eighty-nine', numberInWords(123456789));
+  }
 
 
 });
