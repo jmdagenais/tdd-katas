@@ -1,20 +1,21 @@
-describe("Number in word test", function(){
+TestCase("Number in word test", {
 
-  it("test one digit number", function(){
-    expect(numberInWords.convert(0)).toEqual('zero');
-    expect(numberInWords.convert(1)).toEqual('un');
-    expect(numberInWords.convert(9)).toEqual('neuf');
-  });
+  "test one digit number": function(){
+    assertEquals('zero', numberInWords.convert(0));
+    assertEquals('un', numberInWords.convert(1));
+    assertEquals('neuf', numberInWords.convert(9));
+  },
 
-  it("test two digits number", function(){
-    expect(numberInWords.convert(40)).toEqual('quarante');
-    expect(numberInWords.convert(22)).toEqual('vingt-deux');
-    expect(numberInWords.convert(31)).toEqual('trente et un');
-  });
+  "test two digits number": function(){
+    assertEquals('quarante', numberInWords.convert(40));
+    assertEquals('trente et un', numberInWords.convert(31));
+    assertEquals('vingt-deux', numberInWords.convert(22));
+  },
 
-  it("test 3 digits number", function(){
-    expect(numberInWords.convert(140)).toEqual('cent quarante');
-    expect(numberInWords.convert(741)).toEqual('sept cents quarante et un');
-  });
-
+  "test three digits number": function(){
+    assertEquals('cent quarante', numberInWords.convert(140));
+    assertEquals('trois cents trente-neuf', numberInWords.convert(339));
+    assertEquals('trois cents cinq', numberInWords.convert(305));
+    assertEquals('six cents', numberInWords.convert(600));
+  }
 });

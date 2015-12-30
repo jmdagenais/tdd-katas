@@ -17,10 +17,14 @@ var numberInWords = {
 
       if(str.length >= 2){
           var unite = output;
-          output = this.dizaine[digits.pop()];
+          var dizaine = this.dizaine[digits.pop()];
+          output = dizaine;
           if(unite){
             var lien = unite === 'un' ? ' et ' : '-';
-            output = output + lien + unite;
+            if(!dizaine){
+              lien = '';
+            }
+            output = dizaine + lien + unite;
           }
       }
 
@@ -30,14 +34,13 @@ var numberInWords = {
           var valeur_centaine, cent;
           if(digit >= 2){
             valeur_centaine = this.digit_value[digit];
-            cent = 'cents'
+            cent = 'cents';
           } else {
             valeur_centaine = '';
             cent = 'cent';
           }
           output = valeur_centaine + ' ' + cent + ' ' + output;
       }
-
 
       return output.trim();
   }
